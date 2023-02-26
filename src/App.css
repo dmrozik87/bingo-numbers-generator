@@ -18,6 +18,7 @@
   font-weight: bold;
   align-items: center;
   font-size: 1.2rem;
+  text-align: center;
 }
 
 .inputField>input {
@@ -25,15 +26,14 @@
   color: antiquewhite;
   margin-top: 5px;
   width: 25vh;
-  text-align: center;
   font-size: 1.2rem;
 }
 
 .display {
   background-color: rgb(48, 153, 214);
   color: antiquewhite;
-  height: 50vh;
-  width: 50vh;
+  height: 40vh;
+  width: 40vh;
   border-radius: 50%;
   display: flex;
   align-items: center;
