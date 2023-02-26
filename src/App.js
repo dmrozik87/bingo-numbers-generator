@@ -5,6 +5,7 @@ function App() {
   const [numbers, setNumbers] = useState([]);
   const [index, setIndex] = useState(0);
   const [howManyNumbers, setHowManyNumbers] = useState(0);
+  const [delay, setDelay] = useState(1000);
 
   function createRandomNumbersArray() {
     const randomNumbersArray = [];
@@ -26,20 +27,26 @@ function App() {
       setIndex((prevIndex) => prevIndex + 1);
       counter++;
       if (counter > howManyNumbers) clearInterval(id);
-    }, 500);
+    }, delay);
   }
 
-  function handleChange(event) {
+  function handleNumberQuantityChange(event) {
     setHowManyNumbers(event.target.value);
+  }
+
+  function handleIntervalChange(event) {
+    setDelay(event.target.value*1000)
   }
 
   return (
     <div className="App">
       <div className="inputField">
-        <label htmlFor="howManyNumbers">Ile liczb ma Twoje Bingo?</label>
-        <input type="number" name="howManyNumbers" onChange={handleChange}></input>
+        <label htmlFor="howManyNumbers">How many numbers does your Bingo have?</label>
+        <input type="number" name="howManyNumbers" onChange={handleNumberQuantityChange}></input>
+        <label htmlFor="howManyNumbers">How many seconds should pass between the numbers?</label>
+        <input type="number" name="interval" onChange={handleIntervalChange}></input>
       </div>
-      <button onClick={handleClick}>Start</button>
+      <button onClick={handleClick}>START</button>
       <div className="display">
         <h1>{numbers[index]}</h1>
       </div>
